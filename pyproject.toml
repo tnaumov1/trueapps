@@ -1,0 +1,14 @@
+[project]
+name = "trueapps"
+version = "0.1.0"
+description = "Deploy your custom TrueNAS apps via CLI"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pyyaml>=6.0.3",
+    "truenas-api-client",
+    "websocket-client==1.9.0",
+]
+
+[tool.uv.sources]
+truenas-api-client = { git = "https://github.com/truenas/api_client", rev = "8c59978c3bf6c4e38271363907ec46e9b7f10abf" }
