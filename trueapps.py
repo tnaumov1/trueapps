@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import argparse
 import logging
 import subprocess
@@ -11,8 +9,8 @@ from subprocess import CompletedProcess
 from truenas_api_client import Client
 
 from service.truenas_service import try_deploy_app, login_with_api_key
-from utils.logs import setup_logging
 from utils.apps import discover_apps, find_app_compose
+from utils.logs import setup_logging
 
 log = logging.getLogger(__name__)
 
