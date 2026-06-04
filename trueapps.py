@@ -91,7 +91,7 @@ def define_args_parser() -> ArgumentParser:
         "--apps-dir",
         type=Path,
         default='apps/',
-        help=f"custom apps root dir, defaults to apps/"
+        help="custom apps root dir, defaults to apps/"
     )
     parser.add_argument(
         "--print-apps",
