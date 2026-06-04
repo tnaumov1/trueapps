@@ -1,5 +1,6 @@
 import argparse
 import logging
+import os
 import subprocess
 import sys
 from argparse import ArgumentParser
@@ -14,7 +15,14 @@ log = logging.getLogger(__name__)
 
 
 def run() -> int:
-    args = define_args_parser().parse_args()
+    parser = define_args_parser()
+    args = parser.parse_args()
+
+    if args.api_key is None:
+        args.api_key = os.environ.get("TRUENAS_API_KEY")
+    if not args.api_key:
+        parser.error("--api-key is required (or set the TRUENAS_API_KEY environment variable)")
+
     created = updated = skipped = failed = 0
 
     apps_paths: list[Path] = discover_apps(args.apps_dir, args.apps)
@@ -77,7 +85,7 @@ def define_args_parser() -> ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--host", help="TrueNAS Scale API host (e.g. truenas.local)", required=True)
     parser.add_argument("--port", help="TrueNAS Scale API port (e.g. 443)", default=443, type=int)
-    parser.add_argument("--api-key", help="TrueNAS Scale API key", required=True)
+    parser.add_argument("--api-key", help="TrueNAS Scale API key (or set TRUENAS_API_KEY env var)")
     parser.add_argument("--username", help="TrueNAS Scale API key username", required=True)
     parser.add_argument("--apps", help="deploy only this app")
     parser.add_argument(
