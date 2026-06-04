@@ -10,5 +10,12 @@ dependencies = [
     "websocket-client==1.9.0",
 ]
 
+[project.scripts]
+trueapps = "trueapps.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.10.8,<0.11.0"]
+build-backend = "uv_build"
+
 [tool.uv.sources]
 truenas-api-client = { git = "https://github.com/truenas/api_client", rev = "8c59978c3bf6c4e38271363907ec46e9b7f10abf" }

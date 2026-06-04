@@ -2,7 +2,7 @@ import logging
 
 from truenas_api_client import Client
 
-from utils.apps import compose_equal
+from trueapps.utils.apps import compose_equal
 
 log = logging.getLogger(__name__)
 

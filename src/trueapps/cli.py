@@ -8,14 +8,14 @@ from subprocess import CompletedProcess
 
 from truenas_api_client import Client
 
-from service.truenas_service import try_deploy_app, login_with_api_key
-from utils.apps import discover_apps, find_app_compose
-from utils.logs import setup_logging
+from trueapps.service.truenas_service import try_deploy_app, login_with_api_key
+from trueapps.utils.apps import discover_apps, find_app_compose
+from trueapps.utils.logs import setup_logging
 
 log = logging.getLogger(__name__)
 
 
-def main() -> int:
+def run() -> int:
     args = define_args_parser().parse_args()
     created = updated = skipped = failed = 0
 
@@ -105,12 +105,13 @@ def define_args_parser() -> ArgumentParser:
     )
     return parser
 
-
-if __name__ == "__main__":
+def main() -> None:
     setup_logging()
-
     try:
-        sys.exit(main())
+        sys.exit(run())
     except Exception as exc:
         log.exception(exc)
         sys.exit(-1)
+
+if __name__ == "__main__":
+    main()
