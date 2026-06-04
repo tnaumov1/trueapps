@@ -26,5 +26,17 @@ Based on the official TrueNAS [api client](https://github.com/truenas/api_client
 View all arguments and description
 
 ```bash
-uv run trueapps.py --help
+uv run trueapps --help
+```
+
+Install as a cli-tool
+
+```bash
+uv tool install .
+```
+
+Use as a cli-tool
+
+```bash
+trueapps --help
 ```
