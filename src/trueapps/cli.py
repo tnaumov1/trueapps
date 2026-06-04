@@ -8,9 +8,7 @@ from subprocess import CompletedProcess
 
 from truenas_api_client import Client
 
-from trueapps.service.truenas_service import try_deploy_app, login_with_api_key
-from trueapps.utils.apps import discover_apps, find_app_compose
-from trueapps.utils.logs import setup_logging
+from trueapps import try_deploy_app, login_with_api_key, discover_apps, find_app_compose, setup_logging
 
 log = logging.getLogger(__name__)
 
