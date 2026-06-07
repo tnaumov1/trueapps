@@ -15,7 +15,7 @@ def try_deploy_app(client: Client, app_name: str, app_compose_yaml: str, dry_run
             log.info("unchanged [%s]", app_name)
             return "skipped"
         if dry_run:
-            log.info("update [%s]", app_name)
+            log.info("[DRY RUN] update [%s]", app_name)
             return "updated"
         result = client.call(
             "app.update",
@@ -26,7 +26,7 @@ def try_deploy_app(client: Client, app_name: str, app_compose_yaml: str, dry_run
         action = "updated"
     else:
         if dry_run:
-            log.info("create [%s]", app_name)
+            log.info("[DRY RUN] create [%s]", app_name)
             return "created"
         result = client.call(
             "app.create",
