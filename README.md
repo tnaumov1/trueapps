@@ -2,7 +2,7 @@
 
 Deploy your custom TrueNAS apps via CLI
 
-Based on the official TrueNAS [api client](https://github.com/truenas/api_client)
+Based on the official [TrueNAS API Python Client](https://github.com/truenas/api_client)
 
 ## Features
 
@@ -13,7 +13,7 @@ Based on the official TrueNAS [api client](https://github.com/truenas/api_client
 
 ## Requirements
 
-- Docker Compose (to complete and validate compose files)
+- Docker Compose (to validate compose files)
 - Python 3.14
 - uv (available in PATH)
 - TrueNAS Scale 25.10 and higher
@@ -21,18 +21,31 @@ Based on the official TrueNAS [api client](https://github.com/truenas/api_client
 
 ## Installation
 
-Install it as a standalone cli-tool from GitHub with `uv`
+### Install as `uv tool` (Recommended)
 
 Latest version from `main`:
 
 ```bash
 uv tool install git+https://github.com/tnaumov1/trueapps.git
 ```
+OR
 
 Latest tagged release:
 
 ```bash
 uv tool install git+https://github.com/tnaumov1/trueapps.git@v0.1.1
+```
+
+### Classic install
+
+Download latest version to `trueapps/` directory
+
+```bash
+git clone https://github.com/tnaumov1/trueapps.git
+```
+
+```bash
+cd trueapps/
 ```
 
 ## Usage
