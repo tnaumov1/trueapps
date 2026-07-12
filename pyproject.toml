@@ -10,6 +10,11 @@ dependencies = [
     "websocket-client==1.9.0",
 ]
 
+[project.urls]
+Repository = "https://github.com/tnaumov1/trueapps"
+Issues = "https://github.com/tnaumov1/trueapps/issues"
+Changelog = "https://github.com/tnaumov1/trueapps/releases"
+
 [project.scripts]
 trueapps = "trueapps.cli:main"
 

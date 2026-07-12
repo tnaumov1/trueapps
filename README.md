@@ -19,24 +19,42 @@ Based on the official TrueNAS [api client](https://github.com/truenas/api_client
 - TrueNAS Scale 25.10 and higher
 - TrueNAS API key and username associated with it
 
+## Installation
+
+Install it as a standalone cli-tool from GitHub with `uv`
+
+Latest version from `main`:
+
+```bash
+uv tool install git+https://github.com/tnaumov1/trueapps.git
+```
+
+Latest tagged release:
+
+```bash
+uv tool install git+https://github.com/tnaumov1/trueapps.git@v0.1.1
+```
+
 ## Usage
+
+### Using as installed cli-tool
+
+If you did run `uv tool install` you can use it as a cli-app
+
+```bash
+trueapps --help
+```
 
 ### Using `uv`
 
-View all arguments and description
+No `uv tool install` is required
 
 ```bash
 uv run trueapps --help
 ```
 
-Install as a cli-tool
+## Upgrade
 
 ```bash
-uv tool install .
-```
-
-Use as a cli-tool
-
-```bash
-trueapps --help
+uv tool upgrade trueapps
 ```
